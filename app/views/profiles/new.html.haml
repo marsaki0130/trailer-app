@@ -1,1 +1,16 @@
-プロフィール
+.container
+  = form_with(model:@profile, url:profile_path, method:'post', local:true) do |f|
+    %div 
+      = f.label :nickname, '名前'
+    %div
+      = f.text_field :ninckname
+    %div
+      = f.label :gender, '性別'
+    %div
+      = f.text_field :gender
+    %div
+      = f.label :birthday, '生年月日'
+    %div
+      = f.text_field :birthday
+    .actionds
+      = f.submit 'SUBMIT', class:'submit_btn'
