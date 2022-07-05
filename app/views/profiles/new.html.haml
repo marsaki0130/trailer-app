@@ -1,7 +1,7 @@
 .container
   = form_with(model:@profile, url:profile_path, method:'post', local:true) do |f|
     %div 
-      = f.label :nickname, '名前'
+      = f.label :nickname, 'ニックネーム'
     %div
       = f.text_field :ninckname
     %div
@@ -12,5 +12,9 @@
       = f.label :birthday, '生年月日'
     %div
       = f.text_field :birthday
+    %div
+      = f.label :introduction, '紹介'
+    %div
+      = f.text_area :introduction
     .actionds
       = f.submit 'SUBMIT', class:'submit_btn'
