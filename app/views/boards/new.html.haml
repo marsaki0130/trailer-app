@@ -1,5 +1,9 @@
 .container
   = form_with(model:@board, url:boards_path, method:'post', local:true) do |f|
+    %div
+      = f.label :avatar, '画像'
+    %div
+      = f.file_field :avatar
     %div 
       = f.label :introduction, '投稿'
     %div
