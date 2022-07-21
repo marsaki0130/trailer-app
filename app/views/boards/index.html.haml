@@ -1,1 +1,7 @@
 .container
+  - @board.each do |board|
+    .board_list
+      - board.eyecatch.each do |eyecatch|
+        = image_tag eyecatch, class: 'board_content_image'
+    .board_title
+      %p= board.introduction

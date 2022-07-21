@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
   
   def index
+    @board = Board.all
   end
 
   def new
@@ -20,6 +21,6 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:introduction, :avatar)
+    params.require(:board).permit(:introduction, :eyecatch)
   end
 end
