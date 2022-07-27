@@ -2,6 +2,12 @@
   - @board.each do |board|
     .board_list
       - board.eyecatch.each do |eyecatch|
-        = image_tag eyecatch, class: 'board_content_image'
-    .board_title
-      %p= board.introduction
+        .card_image
+          = image_tag eyecatch
+    .card_content
+      .card_title
+        %p= board.introduction
+      .card_detail
+        = image_tag board.user.avatar_image
+        %div
+          %p= current_user.username
