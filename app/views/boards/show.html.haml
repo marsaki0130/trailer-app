@@ -1,0 +1,5 @@
+.container
+  - @board.eyecatch.each do |eyecatch|
+    = image_tag eyecatch
+  .board_frame
+    %p= @board.introduction
