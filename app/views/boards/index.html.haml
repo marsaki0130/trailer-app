@@ -1,13 +1,15 @@
 .container
   - @board.each do |board|
-    .board_list
-      - board.eyecatch.each do |eyecatch|
-        .card_image
-          = image_tag eyecatch
-    .card_content
-      .card_detail
-        = image_tag board.user.avatar_image
-        %div
-          %p= current_user.username
-      .card_title
-        %p= board.introduction
+    = link_to board_path(id: board.id) do
+      .board_list
+        - board.eyecatch.each do |eyecatch|
+          .card_image
+            = image_tag eyecatch
+      .card_content
+        .card_detail
+          = image_tag board.user.avatar_image
+          %div
+            %p= current_user.username
+        .card_title
+          %p= board.introduction
+          %p= I18n.l(board.created_at, format: :default)
