@@ -13,3 +13,6 @@
         .card_title
           %p= board.introduction
           %p= I18n.l(board.created_at, format: :default)
+        = link_to new_board_path do
+          .float_btn
+            %i.fa.fa-plus
